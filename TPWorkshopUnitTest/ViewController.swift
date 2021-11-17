@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     }
     
     func numberFormatter(number: Int, separator: String = ".", currency: String = "Rp") -> String {
-        // looping dari belakang, per tiga karakter kasih titik
-        // 345 -> 543
         let arrayNumbers = String(number).map { String($0) }
         var count = 0
         var result: [String] = []
