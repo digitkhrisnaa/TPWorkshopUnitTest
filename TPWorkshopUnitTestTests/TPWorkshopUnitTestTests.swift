@@ -37,6 +37,11 @@ class TPWorkshopUnitTestTests: XCTestCase {
     /*
         testing function number formatter
      */
+    func test_numberFormatter_zero() {
+        let numberFormatted = vc.numberFormatter(number: 0)
+        XCTAssertEqual(numberFormatted, "Rp 0")
+    }
+    
     func test_numberFormatter_number() {
         let numberFormatted = vc.numberFormatter(number: 3)
         XCTAssertEqual(numberFormatted, "Rp 3")

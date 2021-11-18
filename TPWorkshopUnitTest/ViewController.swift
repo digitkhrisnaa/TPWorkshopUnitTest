@@ -25,6 +25,10 @@ class ViewController: UIViewController {
      Time complexity: O(log n)
      */
     func numberFormatter(number: Int, separator: String = ".", currency: String = "Rp") -> String {
+        guard number > 0 else {
+            return "\(currency) \(number)"
+        }
+        
         var copyNumber = number
         var result: [String] = []
         while copyNumber > 0 {
