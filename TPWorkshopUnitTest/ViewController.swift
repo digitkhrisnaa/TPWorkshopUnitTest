@@ -21,16 +21,28 @@ class ViewController: UIViewController {
         }
     }
     
+    /*
+     Time complexity: O(log n)
+     */
     func numberFormatter(number: Int, separator: String = ".", currency: String = "Rp") -> String {
-        let arrayNumbers = String(number).map { String($0) }
-        var count = 0
+        var copyNumber = number
         var result: [String] = []
-        for index in stride(from: arrayNumbers.count, to: 0, by: -1) {
-            count += 1
-            result.insert(arrayNumbers[index - 1], at: 0)
-            if count == 3 && index != 1 {
+        while copyNumber > 0 {
+            let lastNumber = copyNumber % 1000
+            copyNumber = copyNumber / 1000
+            
+            if lastNumber == 0 {
+                result.insert("000", at: 0)
+            } else if lastNumber < 10 && copyNumber > 0 {
+                result.insert("00\(lastNumber)", at: 0)
+            } else if lastNumber < 100 && copyNumber > 0 {
+                result.insert("0\(lastNumber)", at: 0)
+            } else {
+                result.insert("\(lastNumber)", at: 0)
+            }
+            
+            if copyNumber > 0 {
                 result.insert(separator, at: 0)
-                count = 0
             }
         }
         
