@@ -18,9 +18,22 @@ class FirstBasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "First Basic"
-        // Do any additional setup after loading the view.
+        
+        numberFormatterTextField.delegate = self
     }
 
+    @IBAction func didTapFindOddEven(_ sender: Any) {
+        guard let oddEvenText = oddEvenTextField.text, !oddEvenText.isEmpty, let number = Int(oddEvenText) else {
+            oddEvenResultLabel.text = "Not number"
+            return
+        }
+        
+        if isEven(number: number) {
+            oddEvenResultLabel.text = "Genap"
+        } else {
+            oddEvenResultLabel.text = "Ganjil"
+        }
+    }
 
     func isEven(number: Int) -> Bool {
         if number % 2 == 0 {
@@ -60,5 +73,16 @@ class FirstBasicViewController: UIViewController {
         }
         
         return "\(currency) \(result.joined())"
+    }
+}
+
+extension FirstBasicViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let numberFormatterText = textField.text, !numberFormatterText.isEmpty, let number = Int(numberFormatterText) else {
+            numberFormatterResultLabel.text = "Not number"
+            return
+        }
+        
+        numberFormatterResultLabel.text = numberFormatter(number: number)
     }
 }
