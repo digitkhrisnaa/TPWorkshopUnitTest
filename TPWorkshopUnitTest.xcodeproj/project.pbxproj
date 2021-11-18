@@ -24,6 +24,7 @@
 		19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */; };
 		19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */; };
 		19DF19BD274648DC00E8E92F /* ThirdAdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */; };
+		19DF19BF2746748900E8E92F /* SecondBasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondBasicViewController.xib; sourceTree = "<group>"; };
 		19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAdvancedViewController.swift; sourceTree = "<group>"; };
 		19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdAdvancedViewController.xib; sourceTree = "<group>"; };
+		19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBasicViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */,
 				19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */,
+				19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */,
 			);
 			path = "2-Basic-WithPattern";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				19DF19B82746489C00E8E92F /* SecondBasicViewController.swift in Sources */,
 				195238B12745101200E6E60F /* ViewController.swift in Sources */,
 				19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */,
+				19DF19BF2746748900E8E92F /* SecondBasicViewModel.swift in Sources */,
 				195238AD2745101200E6E60F /* AppDelegate.swift in Sources */,
 				19DF19B4274647A700E8E92F /* FirstBasicViewController.swift in Sources */,
 				195238AF2745101200E6E60F /* SceneDelegate.swift in Sources */,

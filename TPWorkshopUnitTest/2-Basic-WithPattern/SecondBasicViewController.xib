@@ -49,6 +49,9 @@
                         </backgroundConfiguration>
                         <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="didTapFindOddEven:" destination="-1" eventType="touchUpInside" id="caI-UZ-7XM"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ganjil/Genap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AA-KX-HhS">
                     <rect key="frame" x="212" y="106.5" width="190" height="21"/>

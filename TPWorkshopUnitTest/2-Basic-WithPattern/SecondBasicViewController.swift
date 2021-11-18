@@ -15,21 +15,29 @@ class SecondBasicViewController: UIViewController {
     @IBOutlet weak var numberFormatterTextField: UITextField!
     @IBOutlet weak var numberFormatterResultLabel: UILabel!
     
+    var viewModel = SecondBasicViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Second Basic"
-        // Do any additional setup after loading the view.
+        numberFormatterTextField.delegate = self
+        
+        viewModel.resultOddEven = { [weak self] result in
+            self?.oddEvenResultLabel.text = result
+        }
+        
+        viewModel.resultNumberFormatter = { [weak self] result in
+            self?.numberFormatterResultLabel.text = result
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didTapFindOddEven(_ sender: Any) {
+        viewModel.isEven(text: oddEvenTextField.text)
     }
-    */
+}
 
+extension SecondBasicViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        viewModel.numberFormatter(text: textField.text)
+    }
 }
