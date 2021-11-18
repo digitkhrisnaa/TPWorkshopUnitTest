@@ -1,19 +1,18 @@
 //
-//  TPWorkshopUnitTestTests.swift
+//  1-Basic-WithoutPattern.swift
 //  TPWorkshopUnitTestTests
 //
-//  Created by digital.aurum on 17/11/21.
+//  Created by digital.aurum on 18/11/21.
 //
 
 import XCTest
 @testable import TPWorkshopUnitTest
 
-class TPWorkshopUnitTestTests: XCTestCase {
-    var vc: ViewController!
+class __Basic_WithoutPattern: XCTestCase {
+    var vc: FirstBasicViewController!
 
     override func setUpWithError() throws {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        vc = (storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController)!
+        vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
         vc.loadViewIfNeeded()
     }
 

@@ -13,9 +13,17 @@
 		195238B42745101200E6E60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195238B22745101200E6E60F /* Main.storyboard */; };
 		195238B62745101500E6E60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 195238B52745101500E6E60F /* Assets.xcassets */; };
 		195238B92745101500E6E60F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195238B72745101500E6E60F /* LaunchScreen.storyboard */; };
-		195238C42745101600E6E60F /* TPWorkshopUnitTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195238C32745101600E6E60F /* TPWorkshopUnitTestTests.swift */; };
 		195238CE2745101600E6E60F /* TPWorkshopUnitTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195238CD2745101600E6E60F /* TPWorkshopUnitTestUITests.swift */; };
 		195238D02745101600E6E60F /* TPWorkshopUnitTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195238CF2745101600E6E60F /* TPWorkshopUnitTestUITestsLaunchTests.swift */; };
+		19DF19AA27463D6300E8E92F /* 1-Basic-WithoutPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */; };
+		19DF19AC27463D9100E8E92F /* 2-Basic-WithPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */; };
+		19DF19AE27463DAB00E8E92F /* 3-Advanced-Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AD27463DAB00E8E92F /* 3-Advanced-Standard.swift */; };
+		19DF19B4274647A700E8E92F /* FirstBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19B2274647A700E8E92F /* FirstBasicViewController.swift */; };
+		19DF19B5274647A700E8E92F /* FirstBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19B3274647A700E8E92F /* FirstBasicViewController.xib */; };
+		19DF19B82746489C00E8E92F /* SecondBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */; };
+		19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */; };
+		19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */; };
+		19DF19BD274648DC00E8E92F /* ThirdAdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +53,18 @@
 		195238B82745101500E6E60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		195238BA2745101500E6E60F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		195238BF2745101500E6E60F /* TPWorkshopUnitTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPWorkshopUnitTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		195238C32745101600E6E60F /* TPWorkshopUnitTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPWorkshopUnitTestTests.swift; sourceTree = "<group>"; };
 		195238C92745101600E6E60F /* TPWorkshopUnitTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPWorkshopUnitTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		195238CD2745101600E6E60F /* TPWorkshopUnitTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPWorkshopUnitTestUITests.swift; sourceTree = "<group>"; };
 		195238CF2745101600E6E60F /* TPWorkshopUnitTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPWorkshopUnitTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1-Basic-WithoutPattern.swift"; sourceTree = "<group>"; };
+		19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2-Basic-WithPattern.swift"; sourceTree = "<group>"; };
+		19DF19AD27463DAB00E8E92F /* 3-Advanced-Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3-Advanced-Standard.swift"; sourceTree = "<group>"; };
+		19DF19B2274647A700E8E92F /* FirstBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBasicViewController.swift; sourceTree = "<group>"; };
+		19DF19B3274647A700E8E92F /* FirstBasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstBasicViewController.xib; sourceTree = "<group>"; };
+		19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBasicViewController.swift; sourceTree = "<group>"; };
+		19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondBasicViewController.xib; sourceTree = "<group>"; };
+		19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAdvancedViewController.swift; sourceTree = "<group>"; };
+		19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdAdvancedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,9 @@
 		195238AB2745101200E6E60F /* TPWorkshopUnitTest */ = {
 			isa = PBXGroup;
 			children = (
+				19DF19A127463C4E00E8E92F /* 1-Basic-WithoutPattern */,
+				19DF19A227463C6700E8E92F /* 2-Basic-WithPattern */,
+				19DF19A327463C7600E8E92F /* 3-Advanced */,
 				195238AC2745101200E6E60F /* AppDelegate.swift */,
 				195238AE2745101200E6E60F /* SceneDelegate.swift */,
 				195238B02745101200E6E60F /* ViewController.swift */,
@@ -113,7 +132,9 @@
 		195238C22745101600E6E60F /* TPWorkshopUnitTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				195238C32745101600E6E60F /* TPWorkshopUnitTestTests.swift */,
+				19DF19A527463D1100E8E92F /* 1-Basic-WithoutPattern */,
+				19DF19A627463D1C00E8E92F /* 2-Basic-WithPattern */,
+				19DF19A727463D2500E8E92F /* 3-Advanced */,
 			);
 			path = TPWorkshopUnitTestTests;
 			sourceTree = "<group>";
@@ -125,6 +146,57 @@
 				195238CF2745101600E6E60F /* TPWorkshopUnitTestUITestsLaunchTests.swift */,
 			);
 			path = TPWorkshopUnitTestUITests;
+			sourceTree = "<group>";
+		};
+		19DF19A127463C4E00E8E92F /* 1-Basic-WithoutPattern */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19B2274647A700E8E92F /* FirstBasicViewController.swift */,
+				19DF19B3274647A700E8E92F /* FirstBasicViewController.xib */,
+			);
+			path = "1-Basic-WithoutPattern";
+			sourceTree = "<group>";
+		};
+		19DF19A227463C6700E8E92F /* 2-Basic-WithPattern */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */,
+				19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */,
+			);
+			path = "2-Basic-WithPattern";
+			sourceTree = "<group>";
+		};
+		19DF19A327463C7600E8E92F /* 3-Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */,
+				19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */,
+			);
+			path = "3-Advanced";
+			sourceTree = "<group>";
+		};
+		19DF19A527463D1100E8E92F /* 1-Basic-WithoutPattern */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */,
+			);
+			path = "1-Basic-WithoutPattern";
+			sourceTree = "<group>";
+		};
+		19DF19A627463D1C00E8E92F /* 2-Basic-WithPattern */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */,
+			);
+			path = "2-Basic-WithPattern";
+			sourceTree = "<group>";
+		};
+		19DF19A727463D2500E8E92F /* 3-Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				19DF19AD27463DAB00E8E92F /* 3-Advanced-Standard.swift */,
+			);
+			path = "3-Advanced";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +305,9 @@
 			files = (
 				195238B92745101500E6E60F /* LaunchScreen.storyboard in Resources */,
 				195238B62745101500E6E60F /* Assets.xcassets in Resources */,
+				19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */,
+				19DF19B5274647A700E8E92F /* FirstBasicViewController.xib in Resources */,
+				19DF19BD274648DC00E8E92F /* ThirdAdvancedViewController.xib in Resources */,
 				195238B42745101200E6E60F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19DF19B82746489C00E8E92F /* SecondBasicViewController.swift in Sources */,
 				195238B12745101200E6E60F /* ViewController.swift in Sources */,
+				19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */,
 				195238AD2745101200E6E60F /* AppDelegate.swift in Sources */,
+				19DF19B4274647A700E8E92F /* FirstBasicViewController.swift in Sources */,
 				195238AF2745101200E6E60F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				195238C42745101600E6E60F /* TPWorkshopUnitTestTests.swift in Sources */,
+				19DF19AC27463D9100E8E92F /* 2-Basic-WithPattern.swift in Sources */,
+				19DF19AA27463D6300E8E92F /* 1-Basic-WithoutPattern.swift in Sources */,
+				19DF19AE27463DAB00E8E92F /* 3-Advanced-Standard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

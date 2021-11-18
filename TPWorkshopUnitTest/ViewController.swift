@@ -9,48 +9,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+
+    let pages = [
+        "1-Basic",
+        "2-Basic",
+        "3-Advance",
+        "4-Ultimate"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
+}
 
-    func isEven(number: Int) -> Bool {
-        if number % 2 == 0 {
-            return true
-        } else {
-            return false
-        }
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pages.count
     }
     
-    /*
-     Time complexity: O(log n)
-     */
-    func numberFormatter(number: Int, separator: String = ".", currency: String = "Rp") -> String {
-        guard number > 0 else {
-            return "\(currency) \(number)"
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = pages[indexPath.row]
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let viewController = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
+            navigationController?.pushViewController(viewController, animated: true)
+        case 1:
+            let viewController = SecondBasicViewController(nibName: "SecondBasicViewController", bundle: nil)
+            navigationController?.pushViewController(viewController, animated: true)
+        case 2:
+            let viewController = ThirdAdvancedViewController(nibName: "ThirdAdvancedViewController", bundle: nil)
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            return
         }
-        
-        var copyNumber = number
-        var result: [String] = []
-        while copyNumber > 0 {
-            let lastNumber = copyNumber % 1000
-            copyNumber = copyNumber / 1000
-            
-            if lastNumber == 0 {
-                result.insert("000", at: 0)
-            } else if lastNumber < 10 && copyNumber > 0 {
-                result.insert("00\(lastNumber)", at: 0)
-            } else if lastNumber < 100 && copyNumber > 0 {
-                result.insert("0\(lastNumber)", at: 0)
-            } else {
-                result.insert("\(lastNumber)", at: 0)
-            }
-            
-            if copyNumber > 0 {
-                result.insert(separator, at: 0)
-            }
-        }
-        
-        return "\(currency) \(result.joined())"
     }
 }
 
