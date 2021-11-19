@@ -13,9 +13,9 @@ class ViewController: UIViewController {
 
     let pages = [
         "1-Basic",
-        "2-Basic",
+        "2-Basic MVVM",
         "3-Advance",
-        "4-Ultimate"
+        "4-Intermediate"
     ]
     
     override func viewDidLoad() {
@@ -47,7 +47,10 @@ extension ViewController: UITableViewDelegate {
             let viewController = SecondBasicViewController(nibName: "SecondBasicViewController", bundle: nil)
             navigationController?.pushViewController(viewController, animated: true)
         case 2:
-            let viewController = ThirdAdvancedViewController(nibName: "ThirdAdvancedViewController", bundle: nil)
+            let viewController = ThirdViewController(nibName: "ThirdViewController", bundle: nil)
+            navigationController?.pushViewController(viewController, animated: true)
+        case 3:
+            let viewController = ForthViewController(nibName: "ForthViewController", bundle: nil)
             navigationController?.pushViewController(viewController, animated: true)
         default:
             return
