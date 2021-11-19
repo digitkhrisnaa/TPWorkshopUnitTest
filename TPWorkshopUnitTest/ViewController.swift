@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     let pages = [
         "1-Basic",
         "2-Basic MVVM",
-        "3-Advance",
+        "3-Advanced",
         "4-Intermediate"
     ]
     
@@ -47,10 +47,10 @@ extension ViewController: UITableViewDelegate {
             let viewController = SecondBasicViewController(nibName: "SecondBasicViewController", bundle: nil)
             navigationController?.pushViewController(viewController, animated: true)
         case 2:
-            let viewController = ThirdViewController()
+            let viewController = AdvancedViewController()
             navigationController?.pushViewController(viewController, animated: true)
         case 3:
-            let viewController = ForthViewController(nibName: "ForthViewController", bundle: nil)
+            let viewController = IntermediateViewController(nibName: "IntermediateViewController", bundle: nil)
             navigationController?.pushViewController(viewController, animated: true)
         default:
             return

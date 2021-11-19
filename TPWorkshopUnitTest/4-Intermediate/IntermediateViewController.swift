@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForthViewController: UIViewController {
+class IntermediateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

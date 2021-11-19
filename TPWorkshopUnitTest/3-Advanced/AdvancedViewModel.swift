@@ -7,12 +7,12 @@
 
 import Foundation
 
-class ThirdViewModel {
+class AdvancedViewModel {
     // MARK: Properties
-    let useCase: ThirdNetworkProvider
+    let useCase: AdvancedNetworkProvider
     var products: [Product] = []
     
-    init(useCase: ThirdNetworkProvider) {
+    init(useCase: AdvancedNetworkProvider) {
         self.useCase = useCase
     }
     

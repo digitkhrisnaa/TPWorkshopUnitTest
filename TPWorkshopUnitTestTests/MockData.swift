@@ -22,7 +22,7 @@ struct MockProductData {
     }
 }
 
-struct MockPositiveWorkshopProvider: ThirdNetworkProvider {
+struct MockPositiveWorkshopProvider: AdvancedNetworkProvider {
     func fetchProduct() -> NetworkResult<ProductResult> {
         let result = MockProductData.generateProductResult()
         
@@ -30,7 +30,7 @@ struct MockPositiveWorkshopProvider: ThirdNetworkProvider {
     }
 }
 
-struct MockNegativeWorkshopProvider: ThirdNetworkProvider {
+struct MockNegativeWorkshopProvider: AdvancedNetworkProvider {
     func fetchProduct() -> NetworkResult<ProductResult> {
         return .failed("failed")
     }

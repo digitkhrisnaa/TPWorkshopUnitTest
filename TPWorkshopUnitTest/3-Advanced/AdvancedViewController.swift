@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class AdvancedViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let viewModel: ThirdViewModel
+    let viewModel: AdvancedViewModel
     
     init() {
-        viewModel = ThirdViewModel(useCase: ThirdUseCase())
-        super.init(nibName: "ThirdViewController", bundle: nil)
+        viewModel = AdvancedViewModel(useCase: AdvancedUseCase())
+        super.init(nibName: "AdvancedViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -49,7 +49,7 @@ class ThirdViewController: UIViewController {
     }
 }
 
-extension ThirdViewController: UICollectionViewDataSource {
+extension AdvancedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.products.count
     }
@@ -61,13 +61,13 @@ extension ThirdViewController: UICollectionViewDataSource {
     }
 }
 
-extension ThirdViewController: UICollectionViewDelegateFlowLayout {
+extension AdvancedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width / 2) - 4, height: 300)
     }
 }
 
-extension ThirdViewController: UICollectionViewDelegate {
+extension AdvancedViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelect(index: indexPath.row)
     }
