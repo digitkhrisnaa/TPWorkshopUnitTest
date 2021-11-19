@@ -10,18 +10,18 @@ import XCTest
 
 class __Basic_WithoutPattern: XCTestCase {
     var vc: FirstBasicViewController!
-
+    
     override func setUpWithError() throws {
         vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
         vc.loadViewIfNeeded()
     }
-
+    
     override func tearDownWithError() throws {
         vc = nil
     }
-
+    
     /*
-        testing function odd or even
+     testing function odd or even
      */
     func test_isEven_odd() throws {
         let isOdd = vc.isEven(number: 33)
@@ -34,7 +34,7 @@ class __Basic_WithoutPattern: XCTestCase {
     }
     
     /*
-        testing function number formatter
+     testing function number formatter
      */
     func test_numberFormatter_zero() {
         let numberFormatted = vc.numberFormatter(number: 0)
