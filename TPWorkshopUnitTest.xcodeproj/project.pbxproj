@@ -22,9 +22,11 @@
 		19DF19B5274647A700E8E92F /* FirstBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19B3274647A700E8E92F /* FirstBasicViewController.xib */; };
 		19DF19B82746489C00E8E92F /* SecondBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */; };
 		19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */; };
-		19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */; };
-		19DF19BD274648DC00E8E92F /* ThirdAdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */; };
-		19DF19BF2746748900E8E92F /* SecondBasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */; };
+		19DF19BC274648DC00E8E92F /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19BA274648DC00E8E92F /* ThirdViewController.swift */; };
+		19DF19BD274648DC00E8E92F /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19BB274648DC00E8E92F /* ThirdViewController.xib */; };
+		19DF19C32747517D00E8E92F /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19C12747517D00E8E92F /* ForthViewController.swift */; };
+		19DF19C42747517D00E8E92F /* ForthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DF19C22747517D00E8E92F /* ForthViewController.xib */; };
+		19F5F9D5274753CE009194C4 /* SecondBasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9D4274753CE009194C4 /* SecondBasicViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +66,11 @@
 		19DF19B3274647A700E8E92F /* FirstBasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstBasicViewController.xib; sourceTree = "<group>"; };
 		19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBasicViewController.swift; sourceTree = "<group>"; };
 		19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondBasicViewController.xib; sourceTree = "<group>"; };
-		19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAdvancedViewController.swift; sourceTree = "<group>"; };
-		19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdAdvancedViewController.xib; sourceTree = "<group>"; };
-		19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBasicViewModel.swift; sourceTree = "<group>"; };
+		19DF19BA274648DC00E8E92F /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		19DF19BB274648DC00E8E92F /* ThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		19DF19C12747517D00E8E92F /* ForthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
+		19DF19C22747517D00E8E92F /* ForthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForthViewController.xib; sourceTree = "<group>"; };
+		19F5F9D4274753CE009194C4 /* SecondBasicViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBasicViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				19DF19A127463C4E00E8E92F /* 1-Basic-WithoutPattern */,
 				19DF19A227463C6700E8E92F /* 2-Basic-WithPattern */,
 				19DF19A327463C7600E8E92F /* 3-Advanced */,
+				19DF19C02747505E00E8E92F /* 4-Intermediate */,
 				195238AC2745101200E6E60F /* AppDelegate.swift */,
 				195238AE2745101200E6E60F /* SceneDelegate.swift */,
 				195238B02745101200E6E60F /* ViewController.swift */,
@@ -134,9 +139,9 @@
 		195238C22745101600E6E60F /* TPWorkshopUnitTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				19DF19A527463D1100E8E92F /* 1-Basic-WithoutPattern */,
-				19DF19A627463D1C00E8E92F /* 2-Basic-WithPattern */,
-				19DF19A727463D2500E8E92F /* 3-Advanced */,
+				19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */,
+				19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */,
+				19DF19AD27463DAB00E8E92F /* 3-Advanced-Standard.swift */,
 			);
 			path = TPWorkshopUnitTestTests;
 			sourceTree = "<group>";
@@ -164,7 +169,7 @@
 			children = (
 				19DF19B62746489C00E8E92F /* SecondBasicViewController.swift */,
 				19DF19B72746489C00E8E92F /* SecondBasicViewController.xib */,
-				19DF19BE2746748900E8E92F /* SecondBasicViewModel.swift */,
+				19F5F9D4274753CE009194C4 /* SecondBasicViewModel.swift */,
 			);
 			path = "2-Basic-WithPattern";
 			sourceTree = "<group>";
@@ -172,34 +177,19 @@
 		19DF19A327463C7600E8E92F /* 3-Advanced */ = {
 			isa = PBXGroup;
 			children = (
-				19DF19BA274648DC00E8E92F /* ThirdAdvancedViewController.swift */,
-				19DF19BB274648DC00E8E92F /* ThirdAdvancedViewController.xib */,
+				19DF19BA274648DC00E8E92F /* ThirdViewController.swift */,
+				19DF19BB274648DC00E8E92F /* ThirdViewController.xib */,
 			);
 			path = "3-Advanced";
 			sourceTree = "<group>";
 		};
-		19DF19A527463D1100E8E92F /* 1-Basic-WithoutPattern */ = {
+		19DF19C02747505E00E8E92F /* 4-Intermediate */ = {
 			isa = PBXGroup;
 			children = (
-				19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */,
+				19DF19C12747517D00E8E92F /* ForthViewController.swift */,
+				19DF19C22747517D00E8E92F /* ForthViewController.xib */,
 			);
-			path = "1-Basic-WithoutPattern";
-			sourceTree = "<group>";
-		};
-		19DF19A627463D1C00E8E92F /* 2-Basic-WithPattern */ = {
-			isa = PBXGroup;
-			children = (
-				19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */,
-			);
-			path = "2-Basic-WithPattern";
-			sourceTree = "<group>";
-		};
-		19DF19A727463D2500E8E92F /* 3-Advanced */ = {
-			isa = PBXGroup;
-			children = (
-				19DF19AD27463DAB00E8E92F /* 3-Advanced-Standard.swift */,
-			);
-			path = "3-Advanced";
+			path = "4-Intermediate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,9 +298,10 @@
 			files = (
 				195238B92745101500E6E60F /* LaunchScreen.storyboard in Resources */,
 				195238B62745101500E6E60F /* Assets.xcassets in Resources */,
+				19DF19C42747517D00E8E92F /* ForthViewController.xib in Resources */,
 				19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */,
 				19DF19B5274647A700E8E92F /* FirstBasicViewController.xib in Resources */,
-				19DF19BD274648DC00E8E92F /* ThirdAdvancedViewController.xib in Resources */,
+				19DF19BD274648DC00E8E92F /* ThirdViewController.xib in Resources */,
 				195238B42745101200E6E60F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,11 +329,12 @@
 			files = (
 				19DF19B82746489C00E8E92F /* SecondBasicViewController.swift in Sources */,
 				195238B12745101200E6E60F /* ViewController.swift in Sources */,
-				19DF19BC274648DC00E8E92F /* ThirdAdvancedViewController.swift in Sources */,
-				19DF19BF2746748900E8E92F /* SecondBasicViewModel.swift in Sources */,
+				19DF19BC274648DC00E8E92F /* ThirdViewController.swift in Sources */,
+				19DF19C32747517D00E8E92F /* ForthViewController.swift in Sources */,
 				195238AD2745101200E6E60F /* AppDelegate.swift in Sources */,
 				19DF19B4274647A700E8E92F /* FirstBasicViewController.swift in Sources */,
 				195238AF2745101200E6E60F /* SceneDelegate.swift in Sources */,
+				19F5F9D5274753CE009194C4 /* SecondBasicViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

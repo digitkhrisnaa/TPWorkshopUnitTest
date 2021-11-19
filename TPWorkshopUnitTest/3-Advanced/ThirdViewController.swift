@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ThirdAdvancedViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Advanced Unit Test"
         // Do any additional setup after loading the view.
     }
 
