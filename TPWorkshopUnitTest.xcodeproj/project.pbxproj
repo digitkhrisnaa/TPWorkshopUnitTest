@@ -34,6 +34,7 @@
 		19F5F9E027478D91009194C4 /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9DF27478D91009194C4 /* ThirdViewModel.swift */; };
 		19F5F9E227478DAB009194C4 /* ThirdNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9E127478DAB009194C4 /* ThirdNetworkProvider.swift */; };
 		19F5F9E427479FCC009194C4 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9E327479FCC009194C4 /* MockData.swift */; };
+		19F5F9E72747C624009194C4 /* InspirationData.json in Resources */ = {isa = PBXBuildFile; fileRef = 19F5F9E62747C624009194C4 /* InspirationData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		19F5F9DF27478D91009194C4 /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
 		19F5F9E127478DAB009194C4 /* ThirdNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetworkProvider.swift; sourceTree = "<group>"; };
 		19F5F9E327479FCC009194C4 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		19F5F9E62747C624009194C4 /* InspirationData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = InspirationData.json; path = ../../../../Downloads/InspirationData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			children = (
 				19F5F9E52747B49F009194C4 /* UI */,
 				19F5F9D7274780C4009194C4 /* ProductData.json */,
+				19F5F9E62747C624009194C4 /* InspirationData.json */,
 				19F5F9D9274781A7009194C4 /* ProductData.swift */,
 			);
 			path = Shared;
@@ -335,6 +338,7 @@
 			files = (
 				195238B92745101500E6E60F /* LaunchScreen.storyboard in Resources */,
 				195238B62745101500E6E60F /* Assets.xcassets in Resources */,
+				19F5F9E72747C624009194C4 /* InspirationData.json in Resources */,
 				19F5F9DE274785C3009194C4 /* ProductCollectionViewCell.xib in Resources */,
 				19DF19C42747517D00E8E92F /* ForthViewController.xib in Resources */,
 				19F5F9D8274780C4009194C4 /* ProductData.json in Resources */,
