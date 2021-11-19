@@ -47,7 +47,7 @@ extension ViewController: UITableViewDelegate {
             let viewController = SecondBasicViewController(nibName: "SecondBasicViewController", bundle: nil)
             navigationController?.pushViewController(viewController, animated: true)
         case 2:
-            let viewController = ThirdViewController(nibName: "ThirdViewController", bundle: nil)
+            let viewController = ThirdViewController()
             navigationController?.pushViewController(viewController, animated: true)
         case 3:
             let viewController = ForthViewController(nibName: "ForthViewController", bundle: nil)
