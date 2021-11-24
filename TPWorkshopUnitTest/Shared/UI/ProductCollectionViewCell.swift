@@ -26,21 +26,3 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productShopLabel.text = "\(product.shop.name) - \(product.shop.location)"
     }
 }
-
-extension UIImageView {
-    func load(url : URL?) {
-        guard let url = url else {
-            return
-        }
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}

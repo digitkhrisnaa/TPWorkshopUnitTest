@@ -45,8 +45,20 @@ extension Product: Equatable {
     }
 }
 
+extension Product: HashDiffable {
+    var identifier: Int {
+        return "product-\(id)".hashValue
+    }
+}
+
 struct Shop: Decodable, Equatable {
     let id: Int
     let name: String
     let location: String
+}
+
+extension Shop: HashDiffable {    
+    var identifier: Int {
+        return "shop-\(id)".hashValue
+    }
 }

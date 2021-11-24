@@ -50,7 +50,7 @@ extension ViewController: UITableViewDelegate {
             let viewController = AdvancedViewController()
             navigationController?.pushViewController(viewController, animated: true)
         case 3:
-            let viewController = IntermediateViewController(nibName: "IntermediateViewController", bundle: nil)
+            let viewController = IntermediateViewController()
             navigationController?.pushViewController(viewController, animated: true)
         default:
             return

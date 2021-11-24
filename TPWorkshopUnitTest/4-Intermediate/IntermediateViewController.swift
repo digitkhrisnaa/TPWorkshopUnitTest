@@ -9,10 +9,22 @@ import UIKit
 
 class IntermediateViewController: UIViewController {
 
+    let viewModel: IntermediateViewModel
+    
+    init() {
+        self.viewModel = IntermediateViewModel(useCase: IntermediateUseCase())
+        super.init(nibName: "IntermediateViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Intermediate Unit Test"
         // Do any additional setup after loading the view.
+        viewModel.onDidLoad()
     }
 
 
