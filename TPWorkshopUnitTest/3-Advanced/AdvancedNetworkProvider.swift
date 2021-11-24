@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum NetworkResult<T> {
-    case success(T)
-    case failed(String)
-}
-
 protocol AdvancedNetworkProvider {
     func fetchProduct() -> NetworkResult<ProductResult>
 }
