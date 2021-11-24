@@ -12,11 +12,11 @@ enum NetworkResult<T> {
     case failed(String)
 }
 
-protocol ThirdNetworkProvider {
+protocol AdvancedNetworkProvider {
     func fetchProduct() -> NetworkResult<ProductResult>
 }
 
-struct ThirdUseCase: ThirdNetworkProvider {
+struct AdvancedUseCase: AdvancedNetworkProvider {
     func fetchProduct() -> NetworkResult<ProductResult> {
         guard let url = Bundle.main.path(forResource: "ProductData", ofType: "json") else {
             return .failed("URL Not found")

@@ -43,7 +43,7 @@ class __Advanced: XCTestCase {
     
     func test_positive_didLoad() {
         let useCase = MockPositiveWorkshopProvider()
-        let viewModel = ThirdViewModel(useCase: useCase)
+        let viewModel = AdvancedViewModel(useCase: useCase)
         let expectation = expectation(description: "should return product data")
         let resultExpectation = MockProductData.generateProductResult().data
         
@@ -58,7 +58,7 @@ class __Advanced: XCTestCase {
     
     func test_negative_didLoad() {
         let useCase = MockNegativeWorkshopProvider()
-        let viewModel = ThirdViewModel(useCase: useCase)
+        let viewModel = AdvancedViewModel(useCase: useCase)
         let expectation = expectation(description: "should return error")
         
         viewModel.onErrorReceiveData = { message in
@@ -72,7 +72,7 @@ class __Advanced: XCTestCase {
     
     func test_positive_click_sideEffect() {
         let useCase = MockPositiveWorkshopProvider()
-        let viewModel = ThirdViewModel(useCase: useCase)
+        let viewModel = AdvancedViewModel(useCase: useCase)
         let loadExpectation = expectation(description: "should return product data")
         let tapTriggerExpectation = expectation(description: "should return side effect")
         let resultExpectation = MockProductData.generateProductResult().data
@@ -95,7 +95,7 @@ class __Advanced: XCTestCase {
     
     func test_negative_click_sideEffect() {
         let useCase = MockPositiveWorkshopProvider()
-        let viewModel = ThirdViewModel(useCase: useCase)
+        let viewModel = AdvancedViewModel(useCase: useCase)
         let tapTriggerExpectation = expectation(description: "should return error side effect")
                 
         viewModel.doSideEffect = { message in
