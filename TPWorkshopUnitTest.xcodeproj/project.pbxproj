@@ -29,6 +29,7 @@
 		19C35062274E114200089B51 /* InspirationItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C35060274E114200089B51 /* InspirationItemCollectionViewCell.xib */; };
 		19C35065274E20DE00089B51 /* TickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C35063274E20DE00089B51 /* TickerCollectionViewCell.swift */; };
 		19C35066274E20DE00089B51 /* TickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C35064274E20DE00089B51 /* TickerCollectionViewCell.xib */; };
+		19C35068274E2AC300089B51 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C35067274E2AC300089B51 /* NetworkResult.swift */; };
 		19DF19AA27463D6300E8E92F /* 1-Basic-WithoutPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */; };
 		19DF19AC27463D9100E8E92F /* 2-Basic-WithPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */; };
 		19DF19AE27463DAB00E8E92F /* 3-Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AD27463DAB00E8E92F /* 3-Advanced.swift */; };
@@ -87,6 +88,7 @@
 		19C35060274E114200089B51 /* InspirationItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspirationItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		19C35063274E20DE00089B51 /* TickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		19C35064274E20DE00089B51 /* TickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TickerCollectionViewCell.xib; sourceTree = "<group>"; };
+		19C35067274E2AC300089B51 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1-Basic-WithoutPattern.swift"; sourceTree = "<group>"; };
 		19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2-Basic-WithPattern.swift"; sourceTree = "<group>"; };
 		19DF19AD27463DAB00E8E92F /* 3-Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3-Advanced.swift"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				1980B69B274DD014008E4C0D /* UIImageView+Extension.swift */,
 				1980B69D274DD047008E4C0D /* HashDiffable.swift */,
+				19C35067274E2AC300089B51 /* NetworkResult.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				19C3505D274E0E8600089B51 /* InspirationCollectionViewCell.swift in Sources */,
 				19DF19C32747517D00E8E92F /* PracticeViewController.swift in Sources */,
 				195238AD2745101200E6E60F /* AppDelegate.swift in Sources */,
+				19C35068274E2AC300089B51 /* NetworkResult.swift in Sources */,
 				1980B690274CCD4A008E4C0D /* InspirationData.swift in Sources */,
 				19DF19B4274647A700E8E92F /* FirstBasicViewController.swift in Sources */,
 				1980B698274DCEBE008E4C0D /* Ticker.swift in Sources */,
