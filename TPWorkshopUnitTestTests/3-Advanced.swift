@@ -1,5 +1,5 @@
 //
-//  2-Basic-WithPattern.swift
+//  3-Advanced-Standard.swift
 //  TPWorkshopUnitTestTests
 //
 //  Created by digital.aurum on 18/11/21.
@@ -8,6 +8,6 @@
 import XCTest
 @testable import TPWorkshopUnitTest
 
-class __Basic_WithPattern: XCTestCase {
-
+class __Advanced: XCTestCase {
+    
 }
