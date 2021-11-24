@@ -1,5 +1,5 @@
 //
-//  ForthViewController.swift
+//  PracticeViewController.swift
 //  TPWorkshopUnitTest
 //
 //  Created by digital.aurum on 19/11/21.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class IntermediateViewController: UIViewController {
+class PracticeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let viewModel: IntermediateViewModel
+    let viewModel: PracticeViewModel
     
     init() {
-        self.viewModel = IntermediateViewModel(useCase: IntermediateUseCase())
-        super.init(nibName: "IntermediateViewController", bundle: nil)
+        self.viewModel = PracticeViewModel(useCase: PracticeUseCase())
+        super.init(nibName: "PracticeViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -56,7 +56,7 @@ class IntermediateViewController: UIViewController {
     }
 }
 
-extension IntermediateViewController: UICollectionViewDataSource {
+extension PracticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.data.count
     }
@@ -81,7 +81,7 @@ extension IntermediateViewController: UICollectionViewDataSource {
     }
 }
 
-extension IntermediateViewController: UICollectionViewDelegateFlowLayout {
+extension PracticeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch viewModel.data[indexPath.row] {
         case is Product:

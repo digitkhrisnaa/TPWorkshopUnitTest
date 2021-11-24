@@ -1,5 +1,5 @@
 //
-//  IntermediateViewModel.swift
+//  PracticeViewModel.swift
 //  TPWorkshopUnitTest
 //
 //  Created by digital.aurum on 23/11/21.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-class IntermediateViewModel {
+class PracticeViewModel {
     var data: [HashDiffable] = []
-    let useCase: IntermediateNetworkProvider
+    let useCase: PracticeNetworkProvider
     
-    init(useCase: IntermediateNetworkProvider) {
+    init(useCase: PracticeNetworkProvider) {
         self.useCase = useCase
     }
     
@@ -71,7 +71,7 @@ class IntermediateViewModel {
     }
     
     func onFireDate() {
-        guard let tickerData = IntermediateEnvironment.loadTickerCache("tickerData") else {
+        guard let tickerData = PracticeEnvironment.loadTickerCache("tickerData") else {
             return
         }
         
@@ -88,7 +88,7 @@ class IntermediateViewModel {
         var mutableProducts: [HashDiffable] = products
         
         if let ticker = ticker {
-            IntermediateEnvironment.saveTickerCache(ticker, "tickerData")
+            PracticeEnvironment.saveTickerCache(ticker, "tickerData")
             hasTicker?(true)
         } else {
             hasTicker?(false)

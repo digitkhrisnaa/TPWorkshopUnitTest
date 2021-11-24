@@ -7,7 +7,7 @@
 
 @testable import TPWorkshopUnitTest
 
-struct Mock4PositiveWorkshopProvider: IntermediateNetworkProvider {
+struct Mock4PositiveWorkshopProvider: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         onComplete(.success(Mock4ProductData.generateProductResult()))
     }
@@ -21,7 +21,7 @@ struct Mock4PositiveWorkshopProvider: IntermediateNetworkProvider {
     }
 }
 
-struct Mock4NegativeProductWorkshopProvider: IntermediateNetworkProvider {
+struct Mock4NegativeProductWorkshopProvider: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         onComplete(.failed("failed fetch product"))
     }
@@ -35,7 +35,7 @@ struct Mock4NegativeProductWorkshopProvider: IntermediateNetworkProvider {
     }
 }
 
-struct Mock4NegativeInspirationWorkshopProvider: IntermediateNetworkProvider {
+struct Mock4NegativeInspirationWorkshopProvider: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         onComplete(.success(Mock4ProductData.generateProductResult()))
     }
@@ -49,7 +49,7 @@ struct Mock4NegativeInspirationWorkshopProvider: IntermediateNetworkProvider {
     }
 }
 
-struct Mock4NegativeTickerWorkshopProvider: IntermediateNetworkProvider {
+struct Mock4NegativeTickerWorkshopProvider: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         onComplete(.success(Mock4ProductData.generateProductResult()))
     }
@@ -63,7 +63,7 @@ struct Mock4NegativeTickerWorkshopProvider: IntermediateNetworkProvider {
     }
 }
 
-struct Mock4NegativeAllWorkshopProvider: IntermediateNetworkProvider {
+struct Mock4NegativeAllWorkshopProvider: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         onComplete(.failed("failed fetch product"))
     }

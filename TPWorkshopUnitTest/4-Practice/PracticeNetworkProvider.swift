@@ -1,5 +1,5 @@
 //
-//  IntermediateNetworkProvider.swift
+//  PracticeNetworkProvider.swift
 //  TPWorkshopUnitTest
 //
 //  Created by digital.aurum on 23/11/21.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol IntermediateNetworkProvider {
+protocol PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void)
     func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void)
     func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void)
 }
 
-struct IntermediateUseCase: IntermediateNetworkProvider {
+struct PracticeUseCase: PracticeNetworkProvider {
     func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         guard let url = Bundle.main.path(forResource: "ProductData", ofType: "json") else {
             onComplete(.failed("URL Not found"))

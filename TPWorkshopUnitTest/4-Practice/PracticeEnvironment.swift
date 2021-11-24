@@ -1,5 +1,5 @@
 //
-//  IntermediateEnvironment.swift
+//  PracticeEnvironment.swift
 //  TPWorkshopUnitTest
 //
 //  Created by digital.aurum on 24/11/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IntermediateEnvironment {
+struct PracticeEnvironment {
     static var loadTickerCache: ((String) -> Ticker?) = { key -> Ticker? in
         if let data = UserDefaults.standard.object(forKey: key) as? Data {
             let decoder = JSONDecoder()
