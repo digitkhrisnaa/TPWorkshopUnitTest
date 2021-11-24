@@ -186,45 +186,4 @@ struct Mock4ProductData {
             
         ]
     }
-    
-    static func generateExpectedCompleteValueWithTicker() -> [HashDiffable] {
-        [
-            Ticker(id: 1, title: "belanja yuk"),
-            Product(id: 1,
-                    name: "lorem ipsum",
-                    imageURL: nil,
-                    price: "Rp 100",
-                    shop: Shop(id: 1,
-                               name: "toko serba ada",
-                               location: "Indonesia")),
-            Inspiration(title: "lorem\(1)",
-                        position: 1,
-                        products: [ProductInspiration(id: 1, price: 10000, imageURL: nil)]),
-            Product(id: 2,
-                    name: "lorem ipsum",
-                    imageURL: nil,
-                    price: "Rp 100",
-                    shop: Shop(id: 1,
-                               name: "toko serba ada",
-                               location: "Indonesia")),
-            Inspiration(title: "lorem\(2)",
-                        position: 2,
-                        products: [ProductInspiration(id: 1, price: 10000, imageURL: nil)]),
-            Product(id: 3,
-                    name: "lorem ipsum",
-                    imageURL: nil,
-                    price: "Rp 100",
-                    shop: Shop(id: 1,
-                               name: "toko serba ada",
-                               location: "Indonesia")),
-            Product(id: 4,
-                    name: "lorem ipsum",
-                    imageURL: nil,
-                    price: "Rp 100",
-                    shop: Shop(id: 1,
-                               name: "toko serba ada",
-                               location: "Indonesia"))
-            
-        ]
-    }
 }

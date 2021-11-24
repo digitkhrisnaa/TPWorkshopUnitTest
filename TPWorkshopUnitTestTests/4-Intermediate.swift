@@ -129,9 +129,17 @@ class __Intermediate: XCTestCase {
         viewModel.onDidLoad()
         wait(for: [firstExpectation], timeout: 1)
         
+        guard let ticker = IntermediateEnvironment.loadTickerCache("") else {
+            XCTAssertNil("found nil on ticker cache")
+            return
+        }
+        
+        var newExpectedData = Mock4ProductData.generateExpectedCompleteValue()
+        newExpectedData.insert(ticker, at: 0)
+        
         viewModel.didReceiveData = {
             self.assertArrayHashDiffable(expectedResult: viewModel.data,
-                                    values: Mock4ProductData.generateExpectedCompleteValueWithTicker())
+                                    values: newExpectedData)
             secondExpectation.fulfill()
         }
         
