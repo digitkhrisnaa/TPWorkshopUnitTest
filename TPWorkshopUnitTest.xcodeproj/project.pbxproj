@@ -23,6 +23,12 @@
 		1980B6A0274DDC4A008E4C0D /* IntermediateEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980B69F274DDC4A008E4C0D /* IntermediateEnvironment.swift */; };
 		1980B6A2274DEBF4008E4C0D /* 4-Intermediate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980B6A1274DEBF4008E4C0D /* 4-Intermediate.swift */; };
 		1980B6A4274DEC75008E4C0D /* 4-MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980B6A3274DEC75008E4C0D /* 4-MockData.swift */; };
+		19C3505D274E0E8600089B51 /* InspirationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3505B274E0E8600089B51 /* InspirationCollectionViewCell.swift */; };
+		19C3505E274E0E8600089B51 /* InspirationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C3505C274E0E8600089B51 /* InspirationCollectionViewCell.xib */; };
+		19C35061274E114200089B51 /* InspirationItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C3505F274E114200089B51 /* InspirationItemCollectionViewCell.swift */; };
+		19C35062274E114200089B51 /* InspirationItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C35060274E114200089B51 /* InspirationItemCollectionViewCell.xib */; };
+		19C35065274E20DE00089B51 /* TickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C35063274E20DE00089B51 /* TickerCollectionViewCell.swift */; };
+		19C35066274E20DE00089B51 /* TickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C35064274E20DE00089B51 /* TickerCollectionViewCell.xib */; };
 		19DF19AA27463D6300E8E92F /* 1-Basic-WithoutPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */; };
 		19DF19AC27463D9100E8E92F /* 2-Basic-WithPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */; };
 		19DF19AE27463DAB00E8E92F /* 3-Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF19AD27463DAB00E8E92F /* 3-Advanced.swift */; };
@@ -75,6 +81,12 @@
 		1980B69F274DDC4A008E4C0D /* IntermediateEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntermediateEnvironment.swift; sourceTree = "<group>"; };
 		1980B6A1274DEBF4008E4C0D /* 4-Intermediate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4-Intermediate.swift"; sourceTree = "<group>"; };
 		1980B6A3274DEC75008E4C0D /* 4-MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4-MockData.swift"; sourceTree = "<group>"; };
+		19C3505B274E0E8600089B51 /* InspirationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C3505C274E0E8600089B51 /* InspirationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspirationCollectionViewCell.xib; sourceTree = "<group>"; };
+		19C3505F274E114200089B51 /* InspirationItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C35060274E114200089B51 /* InspirationItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspirationItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		19C35063274E20DE00089B51 /* TickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C35064274E20DE00089B51 /* TickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		19DF19A927463D6300E8E92F /* 1-Basic-WithoutPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1-Basic-WithoutPattern.swift"; sourceTree = "<group>"; };
 		19DF19AB27463D9100E8E92F /* 2-Basic-WithPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2-Basic-WithPattern.swift"; sourceTree = "<group>"; };
 		19DF19AD27463DAB00E8E92F /* 3-Advanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3-Advanced.swift"; sourceTree = "<group>"; };
@@ -232,6 +244,12 @@
 			children = (
 				19F5F9DB274785C3009194C4 /* ProductCollectionViewCell.swift */,
 				19F5F9DC274785C3009194C4 /* ProductCollectionViewCell.xib */,
+				19C3505B274E0E8600089B51 /* InspirationCollectionViewCell.swift */,
+				19C3505C274E0E8600089B51 /* InspirationCollectionViewCell.xib */,
+				19C3505F274E114200089B51 /* InspirationItemCollectionViewCell.swift */,
+				19C35060274E114200089B51 /* InspirationItemCollectionViewCell.xib */,
+				19C35063274E20DE00089B51 /* TickerCollectionViewCell.swift */,
+				19C35064274E20DE00089B51 /* TickerCollectionViewCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -340,6 +358,7 @@
 				195238B92745101500E6E60F /* LaunchScreen.storyboard in Resources */,
 				195238B62745101500E6E60F /* Assets.xcassets in Resources */,
 				19F5F9ED2747D488009194C4 /* InspirationData.json in Resources */,
+				19C3505E274E0E8600089B51 /* InspirationCollectionViewCell.xib in Resources */,
 				19F5F9DE274785C3009194C4 /* ProductCollectionViewCell.xib in Resources */,
 				19DF19C42747517D00E8E92F /* IntermediateViewController.xib in Resources */,
 				19F5F9D8274780C4009194C4 /* ProductData.json in Resources */,
@@ -347,6 +366,8 @@
 				19DF19B92746489C00E8E92F /* SecondBasicViewController.xib in Resources */,
 				19DF19B5274647A700E8E92F /* FirstBasicViewController.xib in Resources */,
 				19DF19BD274648DC00E8E92F /* AdvancedViewController.xib in Resources */,
+				19C35062274E114200089B51 /* InspirationItemCollectionViewCell.xib in Resources */,
+				19C35066274E20DE00089B51 /* TickerCollectionViewCell.xib in Resources */,
 				195238B42745101200E6E60F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +391,7 @@
 				19F5F9DD274785C3009194C4 /* ProductCollectionViewCell.swift in Sources */,
 				19F5F9DA274781A7009194C4 /* ProductData.swift in Sources */,
 				19DF19BC274648DC00E8E92F /* AdvancedViewController.swift in Sources */,
+				19C3505D274E0E8600089B51 /* InspirationCollectionViewCell.swift in Sources */,
 				19DF19C32747517D00E8E92F /* IntermediateViewController.swift in Sources */,
 				195238AD2745101200E6E60F /* AppDelegate.swift in Sources */,
 				1980B690274CCD4A008E4C0D /* InspirationData.swift in Sources */,
@@ -381,8 +403,10 @@
 				19F5F9E227478DAB009194C4 /* AdvancedNetworkProvider.swift in Sources */,
 				1980B69E274DD047008E4C0D /* HashDiffable.swift in Sources */,
 				1980B6A0274DDC4A008E4C0D /* IntermediateEnvironment.swift in Sources */,
+				19C35061274E114200089B51 /* InspirationItemCollectionViewCell.swift in Sources */,
 				19F5F9E027478D91009194C4 /* AdvancedViewModel.swift in Sources */,
 				1980B69C274DD014008E4C0D /* UIImageView+Extension.swift in Sources */,
+				19C35065274E20DE00089B51 /* TickerCollectionViewCell.swift in Sources */,
 				19F5F9D5274753CE009194C4 /* SecondBasicViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
