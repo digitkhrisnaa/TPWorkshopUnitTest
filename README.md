@@ -736,4 +736,176 @@ extension SecondBasicViewController: UITextFieldDelegate {
   
   and we're done! try running the apps `cmd + R` and see the result, you should see list of product there. Also, You just finished stage 4!!! As iOS Engineer this Unit Test is really common usage, because we get the data from network then put it in data source before we bind it to the UI.
   
-## Stage 4 - Train What You Learn!
+## Stage 4 - Wrap it up
+  Finally we reach end of the stage, we have cover essential part of the unit test:
+  - Basic unit test
+  - Leverage unit test with MVVM pattern
+  - Using Dependency Injection in Use Case Provider
+  - Use mock data
+  - Test async job
+  
+  In this stage, you need to create an example apps and use knowledge you have learnt.
+  
+  <img src="https://user-images.githubusercontent.com/22362226/144451278-0be3a81d-20b0-4c17-ab39-3f38aba4da7a.gif" width="250"/>
+  
+  | Use Case |
+  |----------|
+  | Show Product List, the data can fetched from `ProductData.json` |
+  | After x seconds, show the ticker. Ticker data coming from `TickerData.json` and called it in didLoad, if success should be putted the ticker data in cache |
+  | Ticker component always placed in top position |
+  | Showing inspiration that coming from `InspirationData.json`, position of inspiration depends from field in JSON (dynamic position) |
+  | All data sources which `ProductData.json`, `TickerData.json`, and `InspirationData.json` should be call on didLoad in paralell |
+  
+  > Notes: All UI and Model has been provided, you can just focus on business logic and unit test.
+  
+  Good luck!
+  
+  ### Challenge Hint
+  #### Hash Diffable Protocol
+  We're not going use array of any in our data source, turns out, we have provided the `HashDiffable` protocol
+  ```swift
+  protocol HashDiffable {
+    var identifier: Int { get }
+    func isEqual(to other: Any) -> Bool
+  }
+
+  extension HashDiffable where Self: Equatable {
+      func isEqual(to other: Any) -> Bool {
+          guard let other = other as? Self else {
+              return false
+          }
+
+          return self == other
+      }
+  }
+  ```
+  
+  This protocol can be use in our Struct, just conform the protocol and put identifier, for example:
+  ```swift
+  extension Product: HashDiffable {
+    var identifier: Int {
+        return "product-\(id)".hashValue
+    }
+  }
+  ```
+  
+  After we conform the protocol, we can create array of protocol and put any struct as long as the struct is conform to `HashDiffable`
+  ```swift
+  var data: [HashDiffable] = []
+  ```
+  
+  Last but not least, in Unit Test, you can use `isEqual` function from the protocol like below:
+  ```swift
+  internal func assertArrayHashDiffable(expectedResult: [HashDiffable], values: [HashDiffable]) {
+        XCTAssertEqual(expectedResult.count, values.count, "An array count mismatch.")
+        if expectedResult.count == values.count {
+            expectedResult.enumerated().forEach { index, element in
+                XCTAssertTrue(element.isEqual(to: values[index]), "expected index \(index) equal to \(type(of: values[index])) but get \(type(of: element)) instead")
+            }
+        }
+    }
+  ```
+  
+  `assertArrayHashDiffable` usage:
+  ```swift
+  assertArrayHashDiffable(expectedResult: resultData, values: expectedData)
+  ```
+  
+  #### Mock Cache/UserDefault/Persistent Data
+  If you get confuse how to mock cache/UserDefault/Persistent Data, congrats! I have solution for you, we can call it as `Environment`. The idea is same like Use Case provider, but we step it up to the next level, here's the code:
+  ```swift
+  struct PracticeEnvironment {
+      static var loadTickerCache: ((String) -> Ticker?) = { key -> Ticker? in
+          if let data = UserDefaults.standard.object(forKey: key) as? Data {
+              let decoder = JSONDecoder()
+              return try? decoder.decode(Ticker.self, from: data)
+          }
+          return nil
+      }
+
+      static var saveTickerCache: ((Ticker, String) -> Void) = { value, key in
+          let encoder = JSONEncoder()
+          if let encodedData = try? encoder.encode(value) {
+              UserDefaults.standard.set(encodedData, forKey: key)
+          }
+      }
+  }
+  ```
+  
+  Use static variable, so we can use it either for real implementation or mock the implementation. How to use it?
+  ```swift
+  class UnitTest {
+    func test_user_default() {
+        /*
+        *  Mock implementation of process save and load cache data
+        */
+        var tickerMockData: Ticker?
+        PracticeEnvironment.saveTickerCache = { _, _ in
+            tickerMockData = MockData.generateTicker()
+        }
+        
+        PracticeEnvironment.loadTickerCache = { _ in
+            tickerMockData
+        }
+  
+  
+        // Get our data from the Environment
+        guard let ticker = PracticeEnvironment.loadTickerCache("") else {
+            XCTAssertNil("found nil on ticker cache")
+            return
+        }
+    }
+  }
+  ```
+  - Instead of using real implementation which directly putting the data to user default, we can simulate it by mock implementation and put the data to the local variable.
+  - You can use or get the data by getting it from static variable in Environment Struct.
+  - This approach will helping you when you're going to mock implementation of persistent data, you can simulate it so you don't have to clear the persistent data everytime you will running the unit test.
+  
+  #### Bind to UI
+  This course trying to giving you best knowledge in Unit Test, so you don't have to worry about UI, here's the code how to showing different component in UICollectionView:
+  ```swift
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch viewModel.data[indexPath.row] {
+        case let data as Product:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+            cell.configure(product: data)
+            return cell
+        case let data as Inspiration:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InspirationCollectionViewCell", for: indexPath) as! InspirationCollectionViewCell
+            cell.configure(inspiration: data)
+            return cell
+        case let data as Ticker:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TickerCollectionViewCell", for: indexPath) as! TickerCollectionViewCell
+            cell.tickerLabel.text = data.title
+            return cell
+        default:
+            fatalError("can't read the data")
+        }
+    }
+  
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch viewModel.data[indexPath.row] {
+        case is Product:
+            return CGSize(width: (collectionView.frame.width / 2) - 4, height: 300)
+        case is Inspiration:
+            return CGSize(width: collectionView.frame.width - 4, height: 250)
+        case is Ticker:
+            return CGSize(width: collectionView.frame.width - 4, height: 50)
+        default:
+            fatalError("can't read the data")
+        }
+    }
+  ```
+  
+  Now, it's time to try it by yourself, use the hint and explore how you use unit test to improve your apps quality.
+  
+  ## Final Words
+  If you finished every stage and get better understanding of unit test, that's really great for you! We can start using unit test as our development driver, here's what we got from every stage we had:
+  - Frontend not only focusing on UI, but we have plenty of business logic, so start from business logic and thinking how the data can visualize our UI along with Unit Test can level-up your apps quality.
+  - You can manage your work easily, either you start UI first or business logic it's your choice, because we have decentralized the critical layer which View and ViewModel to each file.
+  - Design Pattern ❤️ Unit Test - means any design pattern was born to integrate with unit test.
+  - You don't have to test your apps manually, your job only need to fulfill the unit test and voila everything will run with what you will expected.
+  - Unit test will protect your code logic, so if someone change the logic they need to improve the UT as well.
+  
+  Put your point there, I believe we still see many benefits of using unit test in our code. Thank you and see you!
+  
