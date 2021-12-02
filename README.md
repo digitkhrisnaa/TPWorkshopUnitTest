@@ -6,6 +6,16 @@ As iOS developer sometimes we think "What's benefit of using Unit Test? our job 
 If you raise your hand or you want learn more about Unit Test, this guide is for you! The guide will include 4 stages from very beginning to the common usage Unit Test in iOS development world.
 Don't forget to clone the repository first before you jump to the section.
 
+[Stage 1 - Basic Unit Test](#stage-1---basic-unit-test)
+
+[Stage 2 - Leverage With Design Pattern](#stage-2---leverage-with-design-pattern)
+
+[Break Time](#break-time)
+
+[Stage 3 - Advance Unit Test](#stage-3---advance-unit-test)
+
+[Stage 4 - Wrap it Up](#stage-4---wrap-it-up)
+
 ## Stage 1 - Basic Unit Test
 Final Result
 
@@ -364,7 +374,7 @@ extension SecondBasicViewController: UITextFieldDelegate {
 
   We're done, now Run your application and see the result still the same like on previous stage but our code much much better right? We just unlock our level to having knowledge of design pattern along with the Unit Test 🥳
   
-  ## Relax
+  ## Break Time
   
   Relax a bit, we just finished the 2 stages before. In this area, I would like to ask you a simple question, have you feel benefits of using Unit Testing in iOS Development? here's my answer:
   - I do, one benefit of using them is I don't need to check my function is running well by checking with running an app, just need to write the function and put all use case in unit test and make sure all passed, and I can prove that my apps is running well without need to check it manually.
