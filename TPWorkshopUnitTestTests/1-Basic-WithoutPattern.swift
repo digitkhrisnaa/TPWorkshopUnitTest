@@ -11,12 +11,12 @@ import XCTest
 class __Basic_WithoutPattern: XCTestCase {
     var vc: FirstBasicViewController!
     
-    override func setUpWithError() throws {
+    override func setUp() {
         vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
         vc.loadViewIfNeeded()
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
         vc = nil
     }
     
