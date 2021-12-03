@@ -104,12 +104,12 @@ import XCTest
 class __Basic_WithoutPattern: XCTestCase {
     var vc: FirstBasicViewController!
     
-    override func setUpWithError() throws {
+    override func setUp() {
         vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
         vc.loadViewIfNeeded()
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
         vc = nil
     }
 }
@@ -132,7 +132,7 @@ You can add more use cases, in Unit Test more you cover the use cases it can pro
 
 Add Unit Test
 ```swift
-    func test_isEven_odd() throws {
+    func test_isEven_odd() {
         let isOdd = vc.isEven(number: 3)
         XCTAssertFalse(isOdd, "found even number")
     }

@@ -11,19 +11,19 @@ import XCTest
 class __Basic_WithoutPattern: XCTestCase {
     var vc: FirstBasicViewController!
     
-    override func setUpWithError() throws {
+    override func setUp() {
         vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
         vc.loadViewIfNeeded()
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
         vc = nil
     }
     
     /*
      testing function odd or even
      */
-    func test_isEven_odd() throws {
+    func test_isEven_odd() {
         let isOdd = vc.isEven(number: 33)
         XCTAssertFalse(isOdd, "found even number")
     }
