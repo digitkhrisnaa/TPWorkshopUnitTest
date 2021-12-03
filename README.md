@@ -132,7 +132,7 @@ You can add more use cases, in Unit Test more you cover the use cases it can pro
 
 Add Unit Test
 ```swift
-    func test_isEven_odd() throws {
+    func test_isEven_odd() {
         let isOdd = vc.isEven(number: 3)
         XCTAssertFalse(isOdd, "found even number")
     }
