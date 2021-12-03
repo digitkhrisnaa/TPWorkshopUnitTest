@@ -23,7 +23,7 @@ class __Basic_WithoutPattern: XCTestCase {
     /*
      testing function odd or even
      */
-    func test_isEven_odd() throws {
+    func test_isEven_odd() {
         let isOdd = vc.isEven(number: 33)
         XCTAssertFalse(isOdd, "found even number")
     }
