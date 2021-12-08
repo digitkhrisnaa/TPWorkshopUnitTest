@@ -50,6 +50,7 @@
 		19F5F9E227478DAB009194C4 /* AdvancedNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9E127478DAB009194C4 /* AdvancedNetworkProvider.swift */; };
 		19F5F9E427479FCC009194C4 /* 3-MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F5F9E327479FCC009194C4 /* 3-MockData.swift */; };
 		19F5F9ED2747D488009194C4 /* InspirationData.json in Resources */ = {isa = PBXBuildFile; fileRef = 19F5F9EC2747D488009194C4 /* InspirationData.json */; };
+		E6E8C1CC2760CFE400A4E56D /* MockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8C1CB2760CFE400A4E56D /* MockTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		19F5F9E127478DAB009194C4 /* AdvancedNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedNetworkProvider.swift; sourceTree = "<group>"; };
 		19F5F9E327479FCC009194C4 /* 3-MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3-MockData.swift"; sourceTree = "<group>"; };
 		19F5F9EC2747D488009194C4 /* InspirationData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InspirationData.json; sourceTree = "<group>"; };
+		E6E8C1CB2760CFE400A4E56D /* MockTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				19F5F9E327479FCC009194C4 /* 3-MockData.swift */,
 				1980B6A1274DEBF4008E4C0D /* 4-Practice.swift */,
 				1980B6A3274DEC75008E4C0D /* 4-MockData.swift */,
+				E6E8C1CB2760CFE400A4E56D /* MockTimer.swift */,
 			);
 			path = TPWorkshopUnitTestTests;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1980B6A4274DEC75008E4C0D /* 4-MockData.swift in Sources */,
 				19DF19AC27463D9100E8E92F /* 2-Basic-WithPattern.swift in Sources */,
 				1980B6A2274DEBF4008E4C0D /* 4-Practice.swift in Sources */,
+				E6E8C1CC2760CFE400A4E56D /* MockTimer.swift in Sources */,
 				19F5F9E427479FCC009194C4 /* 3-MockData.swift in Sources */,
 				19DF19AA27463D6300E8E92F /* 1-Basic-WithoutPattern.swift in Sources */,
 				19DF19AE27463DAB00E8E92F /* 3-Advanced.swift in Sources */,

@@ -10,9 +10,11 @@ import Foundation
 class PracticeViewModel {
     var data: [HashDiffable] = []
     let useCase: PracticeNetworkProvider
+    let timerProvider: Timer.Type
     
-    init(useCase: PracticeNetworkProvider) {
+    init(useCase: PracticeNetworkProvider, timerProvider: Timer.Type = Timer.self) {
         self.useCase = useCase
+        self.timerProvider = timerProvider
     }
     
     // MARK: Output
@@ -71,12 +73,18 @@ class PracticeViewModel {
     }
     
     func onFireDate() {
-        guard let tickerData = PracticeEnvironment.loadTickerCache("tickerData") else {
-            return
-        }
-        
-        data.insert(tickerData, at: 0)
-        didReceiveData?()
+        timerProvider.scheduledTimer(withTimeInterval: 5, repeats: false, block: { timer in
+            guard let tickerData = PracticeEnvironment.loadTickerCache("tickerData") else {
+                return
+            }
+            
+            self.data.insert(tickerData, at: 0)
+            self.didReceiveData?()
+        })
+    }
+    
+    deinit {
+        self.timerProvider.invalidate()
     }
     
     // MARK: Private methods

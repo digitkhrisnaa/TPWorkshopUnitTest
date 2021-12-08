@@ -48,9 +48,7 @@ class PracticeViewController: UIViewController {
         
         viewModel.hasTicker = { [weak self] hasTicker in
             if hasTicker {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    self?.viewModel.onFireDate()
-                }
+                self?.viewModel.onFireDate()
             }
         }
     }

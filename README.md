@@ -879,6 +879,49 @@ extension SecondBasicViewController: UITextFieldDelegate {
   - You can use or get the data by getting it from static variable in Environment Struct.
   - This approach will helping you when you're going to mock implementation of persistent data, you can simulate it so you don't have to clear the persistent data everytime you will running the unit test.
   
+  #### Mocking the Timer
+  While the Ticker function is binded by a Timer, we need to make sure that our unit test also cover that too. We can use `sleep` or `timeout` for that to wait until the timer ended. But, if you think that every function uses that function, your unit test testing time will get longer and longer. Instead we can mock the timer using depedencies injection.
+
+  First of all, because we want to mock the timer by using deps injection. Make sure that your viewModel init function already cover that
+  ```swift
+    init(useCase: PracticeNetworkProvider, timerProvider: Timer.Type = Timer.self) {
+        self.useCase = useCase
+        self.timerProvider = timerProvider
+    }
+  ```
+  Then inside the viewModel you can schedule the timer like you used to.
+  ```swift
+    timerProvider.scheduledTimer(withTimeInterval: 5, repeats: false, block: { _ in
+        // do what you want here
+    })
+  ```
+
+  Voila! you done with the business logic, but now, how to test?
+
+  We can use `MockTimer` class that already provided in the project. This class will help us to advance time so we don't have to wait until 5 seconds to do a function.
+
+  Inside your tests you can directly use something like this, for example: 
+  ```swift
+    func test_fireDate() {
+        var tickerMockData: Ticker?
+        
+        let yourExpectation = expect(description: "any_description")
+        let useCase = Mock4PositiveWorkshopProvider()
+        let viewModel = PracticeViewModel(useCase: useCase, timerProvider: MockTimer.self)
+        
+        viewModel.myOutput = {
+            // Assert something here
+            yourExpectation.fullfill()
+        }
+
+        viewModel.onFireDate()
+        // By calling this we can proceed timer time that needed to execute onFireDate() function
+        MockTimer.currentTimer.fire()
+
+        wait(for: [yourExpectation], timeout: 1)
+    }
+  ```
+
   #### Bind to UI
   This course trying to giving you best knowledge in Unit Test, so you don't have to worry about UI, here's the code how to showing different component in UICollectionView:
   ```swift
