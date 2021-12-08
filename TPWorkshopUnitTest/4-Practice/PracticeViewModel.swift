@@ -80,7 +80,6 @@ class PracticeViewModel {
             
             self.data.insert(tickerData, at: 0)
             self.didReceiveData?()
-            timer.invalidate()
         })
     }
     
