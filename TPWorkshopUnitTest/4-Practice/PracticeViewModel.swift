@@ -83,6 +83,10 @@ class PracticeViewModel {
         })
     }
     
+    deinit {
+        self.timerProvider.invalidate()
+    }
+    
     // MARK: Private methods
     private func processor(product: ProductResult?, inspiration: InspirationResult?, ticker: Ticker?) {
         guard let products = product?.data else {
