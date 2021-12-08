@@ -108,7 +108,7 @@ class __Practice: XCTestCase {
         var tickerMockData: Ticker?
         
         let useCase = Mock4PositiveWorkshopProvider()
-        let viewModel = PracticeViewModel(useCase: useCase)
+        let viewModel = PracticeViewModel(useCase: useCase, timerProvider: MockTimer.self)
         let firstExpectation = expectation(description: "should return complete data without ticker")
         let secondExpectation = expectation(description: "should return complete data with ticker")
         
@@ -144,6 +144,7 @@ class __Practice: XCTestCase {
         }
         
         viewModel.onFireDate()
+        MockTimer.currentTimer.fire()
         wait(for: [secondExpectation], timeout: 1)
     }
     
