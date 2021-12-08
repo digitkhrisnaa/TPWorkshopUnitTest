@@ -8,23 +8,23 @@
 import Foundation
 
 protocol AdvancedNetworkProvider {
-    func fetchProduct() -> NetworkResult<ProductResult>
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void)
 }
 
 struct AdvancedUseCase: AdvancedNetworkProvider {
-    func fetchProduct() -> NetworkResult<ProductResult> {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
         guard let url = Bundle.main.path(forResource: "ProductData", ofType: "json") else {
-            return .failed("URL Not found")
+            return onComplete(.failed("URL Not found"))
         }
         
         if let data = try? Data(contentsOf: URL(fileURLWithPath: url), options: .mappedIfSafe) {
             if let result = try? JSONDecoder().decode(ProductResult.self, from: data) {
-                return .success(result)
+                return onComplete(.success(result))
             } else {
-                return .failed("Failed when decoding")
+                return onComplete(.failed("Failed when decoding"))
             }
         } else {
-            return .failed("Failed converting to data")
+            return onComplete(.failed("Failed converting to data"))
         }
     }
 }

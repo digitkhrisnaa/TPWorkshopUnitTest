@@ -23,20 +23,27 @@ class AdvancedViewModel {
     
     // MARK: Input
     func didLoad() {
-        let result: NetworkResult<ProductResult>
+        var productResult = [Product]()
+        var errorMessage: String = ""
         
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        result = useCase.fetchProduct()
-        dispatchGroup.leave()
+        useCase.fetchProduct { result in
+            switch result {
+            case let .success(productData):
+                productResult = productData.data
+            case let .failed(message):
+                errorMessage = message
+            }
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.notify(queue: .main) {
-            switch result {
-            case let .success(result):
-                self.products = result.data
+            if errorMessage.isEmpty {
+                self.products = productResult
                 self.receiveData?()
-            case let .failed(message):
-                self.onErrorReceiveData?(message)
+            } else {
+                self.onErrorReceiveData?(errorMessage)
             }
         }
     }
