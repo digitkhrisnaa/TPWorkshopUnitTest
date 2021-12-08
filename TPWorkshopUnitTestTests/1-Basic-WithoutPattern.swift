@@ -13,7 +13,6 @@ class __Basic_WithoutPattern: XCTestCase {
     
     override func setUp() {
         vc = FirstBasicViewController(nibName: "FirstBasicViewController", bundle: nil)
-        vc.loadViewIfNeeded()
     }
     
     override func tearDown() {
