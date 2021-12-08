@@ -23,14 +23,21 @@ class AdvancedViewModel {
     
     // MARK: Input
     func didLoad() {
-        let result: NetworkResult<ProductResult>
+        var result: NetworkResult<ProductResult>?
         
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        result = useCase.fetchProduct()
-        dispatchGroup.leave()
+        useCase.fetchProduct { productResult in
+            result = productResult
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.notify(queue: .main) {
+            guard let result = result else {
+                self.onErrorReceiveData?("found error in network")
+                return
+            }
+            
             switch result {
             case let .success(result):
                 self.products = result.data
