@@ -438,13 +438,13 @@ extension SecondBasicViewController: UITextFieldDelegate {
   - We need to have DI implementation so we can passing the I/O process to the viewModel.
   ```swift
   protocol AdvancedNetworkProvider {
-    func fetchProduct() -> NetworkResult<ProductResult>
+    func fetchProduct(completion: @escaping ((NetworkResult<ProductResult>) -> Void))
   }
   ```
   - Create struct that conform to protocol `AdvancedNetworkProvider`
   ```swift
   struct AdvancedUseCase: AdvancedNetworkProvider { 
-    func fetchProduct() -> NetworkResult<ProductResult> { 
+    func fetchProduct(completion: @escaping ((NetworkResult<ProductResult>) -> Void)) { 
   
     }
   }
@@ -452,21 +452,22 @@ extension SecondBasicViewController: UITextFieldDelegate {
   
   - We need to read the file `ProductData.json` and decode it to `ProductData.swift`, put implementation to the `fetchProduct()` function
   ```swift
-  func fetchProduct() -> NetworkResult<ProductResult> {
-      guard let url = Bundle.main.path(forResource: "ProductData", ofType: "json") else {
-          return .failed("URL Not found")
-      }
+    func fetchProduct(completion: @escaping ((NetworkResult<ProductResult>) -> Void)) {
+        guard let url = Bundle.main.path(forResource: "ProductData", ofType: "json") else {
+            completion(.failed("URL Not found"))
+            return
+        }
         
-      if let data = try? Data(contentsOf: URL(fileURLWithPath: url), options: .mappedIfSafe) {
-          if let result = try? JSONDecoder().decode(ProductResult.self, from: data) {
-              return .success(result)
-          } else {
-              return .failed("Failed when decoding")
-          }
-       } else {
-          return .failed("Failed converting to data")
-       }
-  }
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: url), options: .mappedIfSafe) {
+            if let result = try? JSONDecoder().decode(ProductResult.self, from: data) {
+                completion(.success(result))
+            } else {
+                completion(.failed("Failed when decoding"))
+            }
+        } else {
+            completion(.failed("Failed converting to data"))
+        }
+    }
   ```
 
   Done, we have created the struct that conform to the protocol for read the file and decode it to our model. You can change the implementation for example you need to do Network Call and read the JSON response from there, or maybe you can use to read from database, it can be anything base on your goal.
@@ -513,14 +514,21 @@ extension SecondBasicViewController: UITextFieldDelegate {
   The last thing is we should add the implementation in the input function (don't forget about that 😜)
   ```swift
    func didLoad() {
-        let result: NetworkResult<ProductResult>
+        var result: NetworkResult<ProductResult>?
         
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        result = useCase.fetchProduct()
-        dispatchGroup.leave()
+        useCase.fetchProduct { productResult in
+            result = productResult
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.notify(queue: .main) {
+            guard let result = result else {
+                self.onErrorReceiveData?("found error in network")
+                return
+            }
+            
             switch result {
             case let .success(result):
                 self.products = result.data
@@ -575,19 +583,19 @@ extension SecondBasicViewController: UITextFieldDelegate {
   
   We entering the main part, still remember about protocol we create before right? not only for DI, those method is useful to create mock implementation like below
   ```swift
-  struct MockPositiveWorkshopProvider: AdvancedNetworkProvider {
-    func fetchProduct() -> NetworkResult<ProductResult> {
-        let result = MockProductData.generateProductResult()
+    struct MockPositiveWorkshopProvider: AdvancedNetworkProvider {
+        func fetchProduct(completion: @escaping ((NetworkResult<ProductResult>) -> Void)) {
+            let result = MockProductData.generateProductResult()
         
-        return .success(result)
+            completion(.success(result))
+        }
     }
-  }
 
-  struct MockNegativeWorkshopProvider: AdvancedNetworkProvider {
-      func fetchProduct() -> NetworkResult<ProductResult> {
-          return .failed("failed")
-      }
-  }
+    struct MockNegativeWorkshopProvider: AdvancedNetworkProvider {
+        func fetchProduct(completion: @escaping ((NetworkResult<ProductResult>) -> Void)) {
+            completion(.failed("failed"))
+        }
+    }
   ```
   - We can create 2 different struct that conform to our protocol, and we can change the implementation there.
   - We can simulate negative and positive mock data, explore yourself for other use case.
