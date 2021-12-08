@@ -73,8 +73,8 @@ class PracticeViewModel {
     }
     
     func onFireDate() {
-        timerProvider?.scheduledTimer(withTimeInterval: 5, repeats: false, block: { timer in
-            guard let tickerData = PracticeEnvironment.loadTickerCache("tickerData") else {
+        timerProvider?.scheduledTimer(withTimeInterval: 5, repeats: false, block: { [weak self] timer in
+            guard let self = self, let tickerData = PracticeEnvironment.loadTickerCache("tickerData") else {
                 return
             }
             
