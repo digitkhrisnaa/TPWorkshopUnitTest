@@ -11,7 +11,10 @@ class PracticeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let viewModel: PracticeViewModel
+    
     init() {
+        self.viewModel = PracticeViewModel(useCase: PracticeUseCase())
         super.init(nibName: "PracticeViewController", bundle: nil)
     }
     
@@ -29,28 +32,46 @@ class PracticeViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        bindViewModel()
+        viewModel.onDidLoad()
+    }
+    
+    func bindViewModel() {
+        viewModel.didReceiveData = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+        viewModel.didGotError = { messages in
+            print(messages.joined(separator: ","))
+        }
+        
+        viewModel.hasTicker = { [weak self] hasTicker in
+            if hasTicker {
+                self?.viewModel.onFireDate()
+            }
+        }
     }
 }
 
 extension PracticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let data: [HashDiffable] = []
-        switch data[indexPath.row] {
+        switch viewModel.data[indexPath.row] {
         case let data as Product:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-            
+            cell.configure(product: data)
             return cell
         case let data as Inspiration:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InspirationCollectionViewCell", for: indexPath) as! InspirationCollectionViewCell
-            
+            cell.configure(inspiration: data)
             return cell
         case let data as Ticker:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TickerCollectionViewCell", for: indexPath) as! TickerCollectionViewCell
-            
+            cell.tickerLabel.text = data.title
             return cell
         default:
             fatalError("can't read the data")
@@ -60,8 +81,7 @@ extension PracticeViewController: UICollectionViewDataSource {
 
 extension PracticeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let data: [HashDiffable] = []
-        switch data {
+        switch viewModel.data[indexPath.row] {
         case is Product:
             return CGSize(width: (collectionView.frame.width / 2) - 4, height: 300)
         case is Inspiration:

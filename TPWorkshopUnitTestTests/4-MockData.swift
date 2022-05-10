@@ -7,24 +7,74 @@
 
 @testable import TPWorkshopUnitTest
 
-struct Mock4PositiveWorkshopProvider {
+struct Mock4PositiveWorkshopProvider: PracticeNetworkProvider {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateProductResult()))
+    }
     
+    func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateInspirationResult()))
+    }
+    
+    func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateTicker()))
+    }
 }
 
-struct Mock4NegativeProductWorkshopProvider {
+struct Mock4NegativeProductWorkshopProvider: PracticeNetworkProvider {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
+        onComplete(.failed("failed fetch product"))
+    }
     
+    func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateInspirationResult()))
+    }
+    
+    func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateTicker()))
+    }
 }
 
-struct Mock4NegativeInspirationWorkshopProvider {
+struct Mock4NegativeInspirationWorkshopProvider: PracticeNetworkProvider {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateProductResult()))
+    }
     
+    func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void) {
+        onComplete(.failed("failed fetch inspiration"))
+    }
+    
+    func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateTicker()))
+    }
 }
 
-struct Mock4NegativeTickerWorkshopProvider {
+struct Mock4NegativeTickerWorkshopProvider: PracticeNetworkProvider {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateProductResult()))
+    }
     
+    func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void) {
+        onComplete(.success(Mock4ProductData.generateInspirationResult()))
+    }
+    
+    func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void) {
+        onComplete(.failed("failed fetch ticker"))
+    }
 }
 
-struct Mock4NegativeAllWorkshopProvider {
+struct Mock4NegativeAllWorkshopProvider: PracticeNetworkProvider {
+    func fetchProduct(onComplete: @escaping (NetworkResult<ProductResult>) -> Void) {
+        onComplete(.failed("failed fetch product"))
+    }
     
+    func fetchInspiration(onComplete: @escaping (NetworkResult<InspirationResult>) -> Void) {
+        onComplete(.failed("failed fetch inspiration"))
+    }
+    
+    func fetchTicker(onComplete: @escaping (NetworkResult<Ticker>) -> Void) {
+        onComplete(.failed("failed fetch ticker"))
+    }
 }
 
 struct Mock4ProductData {
