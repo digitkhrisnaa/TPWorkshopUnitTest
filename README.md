@@ -6,6 +6,8 @@ As iOS developer sometimes we think "What's benefit of using Unit Test? our job 
 If you raise your hand or you want learn more about Unit Test, this guide is for you! The guide will include 4 stages from very beginning to the common usage Unit Test in iOS development world.
 Don't forget to clone the repository first before you jump to the section.
 
+This repository contains 2 folders which Starter and Finished. You can start from Starter folder and follow the step-by-step from this tutorial, or you can open Finished to look at the final tutorial.
+
 [Stage 1 - Basic Unit Test](#stage-1---basic-unit-test)
 
 [Stage 2 - Leverage With Design Pattern](#stage-2---leverage-with-design-pattern)
